@@ -1,0 +1,156 @@
+{
+  "version": "1.0",
+  "status": "PROVISIONAL_TEST_TAXONOMY_NOT_COMPANY_APPROVED",
+  "categories": [
+    {
+      "id": "OCCUPATIONAL_SAFETY",
+      "name": "Occupational safety",
+      "definition": "Worker safety, training, PPE and hazards on sites; excludes machinery product certification and hazardous-substance-specific duties."
+    },
+    {
+      "id": "MACHINERY_EQUIPMENT",
+      "name": "Machinery and work equipment",
+      "definition": "Equipment inspection, maintenance and machine operational safety; excludes general PPE and product market certification."
+    },
+    {
+      "id": "CHEMICALS_HAZARDOUS_SUBSTANCES",
+      "name": "Chemicals and hazardous substances",
+      "definition": "Chemical exposure, safety data sheets, substance storage and handling; road carriage belongs to dangerous goods."
+    },
+    {
+      "id": "FIRE_EXPLOSION",
+      "name": "Fire and explosion protection",
+      "definition": "Fire prevention, explosive atmospheres, evacuation fire controls; excludes general structural design."
+    },
+    {
+      "id": "AIR_EMISSIONS",
+      "name": "Air emissions",
+      "definition": "Air pollutants, emissions measurement and stack monitoring; greenhouse-gas accounting belongs to climate."
+    },
+    {
+      "id": "WASTE_CIRCULARITY",
+      "name": "Waste and circular economy",
+      "definition": "Waste registers, disposal, recycling and material recovery; excludes water discharge."
+    },
+    {
+      "id": "WATER_WASTEWATER",
+      "name": "Water and wastewater",
+      "definition": "Water abstraction, wastewater discharge, groundwater and water permits; excludes soil remediation."
+    },
+    {
+      "id": "SOIL_CONTAMINATION",
+      "name": "Soil and contaminated land",
+      "definition": "Contaminated-site investigation, excavated soil contamination and remediation; excludes ordinary geotechnical design."
+    },
+    {
+      "id": "NATURE_BIODIVERSITY",
+      "name": "Nature and biodiversity",
+      "definition": "Protected species, habitats and ecological restrictions; excludes landscape architectural design."
+    },
+    {
+      "id": "NOISE_VIBRATION",
+      "name": "Noise and vibration",
+      "definition": "Environmental noise/vibration limits and measurement; occupational chemical exposure is separate."
+    },
+    {
+      "id": "ENERGY_EFFICIENCY",
+      "name": "Energy efficiency",
+      "definition": "Energy consumption, energy audits and efficiency reporting; excludes renewable generation permits and climate inventories."
+    },
+    {
+      "id": "CLIMATE_CARBON",
+      "name": "Climate and carbon accounting",
+      "definition": "Greenhouse-gas inventories, carbon emissions accounting and emissions trading; excludes local pollutant monitoring."
+    },
+    {
+      "id": "RENEWABLE_ENERGY",
+      "name": "Renewable energy",
+      "definition": "Renewable generation assets and their connection/operating requirements; energy consumption audits are separate."
+    },
+    {
+      "id": "BUILDING_PERMITS",
+      "name": "Building permits and public building law",
+      "definition": "Building authorisation, use approval and local public building requirements; excludes procurement tender rules."
+    },
+    {
+      "id": "STRUCTURAL_GEOTECHNICAL",
+      "name": "Structural and geotechnical design",
+      "definition": "Load-bearing calculations, structural stability, foundations and soil-bearing design; excludes product market declarations."
+    },
+    {
+      "id": "CONSTRUCTION_PRODUCT_CONFORMITY",
+      "name": "Construction product conformity",
+      "definition": "Market conformity, declarations of performance and marking of construction products; excludes project-specific load calculations."
+    },
+    {
+      "id": "PUBLIC_PROCUREMENT",
+      "name": "Public procurement and tenders",
+      "definition": "Public tender procedures, bidder eligibility, award criteria and procurement challenges; private supplier audits are separate."
+    },
+    {
+      "id": "CONTRACTS_LIABILITY",
+      "name": "Contracts and liability",
+      "definition": "Commercial construction contract terms, defects, claims and civil liability; excludes insurance coverage administration."
+    },
+    {
+      "id": "SUPPLY_CHAIN_DUE_DILIGENCE",
+      "name": "Supply-chain due diligence",
+      "definition": "Supplier human-rights and environmental due diligence, sourcing controls and remediation; excludes public tender procedure."
+    },
+    {
+      "id": "ROAD_FLEET_TRANSPORT",
+      "name": "Road transport and fleets",
+      "definition": "Commercial vehicle operating, driver, roadworthiness and logistics duties; hazardous loads belong to dangerous goods."
+    },
+    {
+      "id": "DANGEROUS_GOODS_TRANSPORT",
+      "name": "Dangerous-goods transport",
+      "definition": "Classification, packaging, documentation and safe carriage of dangerous goods in transport."
+    },
+    {
+      "id": "EMPLOYMENT_WORKING_TIME",
+      "name": "Employment and working time",
+      "definition": "Employment conditions, working hours, leave and employee records; excludes works council participation."
+    },
+    {
+      "id": "WORKS_COUNCIL_PARTICIPATION",
+      "name": "Works council and participation",
+      "definition": "Works council consultation, participation rights and employee representation."
+    },
+    {
+      "id": "DATA_PROTECTION",
+      "name": "Data protection and privacy",
+      "definition": "Personal-data processing, lawful purpose, access, retention and data-subject rights; excludes network technical hardening alone."
+    },
+    {
+      "id": "CYBERSECURITY",
+      "name": "Cybersecurity",
+      "definition": "Network/system security, vulnerability handling and technical cyber-incident controls; personal-data law is separate."
+    },
+    {
+      "id": "CORPORATE_GOVERNANCE_COMPLIANCE",
+      "name": "Corporate governance and compliance",
+      "definition": "Governance, anti-bribery, conflicts of interest and whistleblowing controls; excludes bookkeeping standards."
+    },
+    {
+      "id": "FINANCIAL_ACCOUNTING_REPORTING",
+      "name": "Financial accounting and reporting",
+      "definition": "Bookkeeping, financial statements, recognition and financial disclosure; excludes tax return obligations."
+    },
+    {
+      "id": "TAX_CUSTOMS",
+      "name": "Tax and customs",
+      "definition": "Tax returns, tax records, VAT and customs declarations; excludes non-tax financial statement preparation."
+    },
+    {
+      "id": "INSURANCE",
+      "name": "Insurance",
+      "definition": "Insurance policies, coverage, claims notification and insured-risk records; contractual liability itself is separate."
+    },
+    {
+      "id": "ESG_SUSTAINABILITY_REPORTING",
+      "name": "ESG and sustainability reporting",
+      "definition": "Company-level sustainability disclosure covering environmental, social and governance indicators; single energy audits/carbon calculations use their specific categories."
+    }
+  ]
+}

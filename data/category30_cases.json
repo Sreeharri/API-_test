@@ -1,0 +1,996 @@
+{
+  "version": "1.0",
+  "description": "Balanced synthetic examples; expected labels require expert validation before production evaluation.",
+  "cases": [
+    {
+      "id": "occupational_safety-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. Site employers must provide fall-protection training to workers before work at height.",
+      "expected": {
+        "category_ids": [
+          "OCCUPATIONAL_SAFETY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "occupational_safety-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Arbeitgeber müssen Beschäftigte vor Höhenarbeiten im Umgang mit Absturzsicherungen unterweisen.",
+      "expected": {
+        "category_ids": [
+          "OCCUPATIONAL_SAFETY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "machinery_equipment-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. Operators must arrange recurring technical inspections of lifting machinery by 2027-06-30.",
+      "expected": {
+        "category_ids": [
+          "MACHINERY_EQUIPMENT"
+        ],
+        "status": "CLASSIFIED",
+        "dates": [
+          "2027-06-30"
+        ]
+      }
+    },
+    {
+      "id": "machinery_equipment-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Betreiber müssen wiederkehrende technische Prüfungen ihrer Hebezeuge bis zum 2027-06-30 veranlassen.",
+      "expected": {
+        "category_ids": [
+          "MACHINERY_EQUIPMENT"
+        ],
+        "status": "CLASSIFIED",
+        "dates": [
+          "2027-06-30"
+        ]
+      }
+    },
+    {
+      "id": "chemicals_hazardous_substances-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. Employers using solvent cleaners must keep safety data sheets and assess worker exposure.",
+      "expected": {
+        "category_ids": [
+          "CHEMICALS_HAZARDOUS_SUBSTANCES"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "chemicals_hazardous_substances-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Arbeitgeber müssen für lösemittelhaltige Reiniger Sicherheitsdatenblätter vorhalten und die Exposition beurteilen.",
+      "expected": {
+        "category_ids": [
+          "CHEMICALS_HAZARDOUS_SUBSTANCES"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "fire_explosion-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. Operators of dust-producing processes must maintain an explosion-protection document.",
+      "expected": {
+        "category_ids": [
+          "FIRE_EXPLOSION"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "fire_explosion-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Betreiber stauberzeugender Anlagen müssen ein Explosionsschutzdokument führen.",
+      "expected": {
+        "category_ids": [
+          "FIRE_EXPLOSION"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "air_emissions-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. A cement installation must measure particulate emissions at its exhaust stack every quarter.",
+      "expected": {
+        "category_ids": [
+          "AIR_EMISSIONS"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "air_emissions-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Ein Zementwerk muss die Staubemissionen am Abgaskamin vierteljährlich messen.",
+      "expected": {
+        "category_ids": [
+          "AIR_EMISSIONS"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "waste_circularity-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. Concrete manufacturers must document the recycling route for waste concrete by 2027-08-31.",
+      "expected": {
+        "category_ids": [
+          "WASTE_CIRCULARITY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": [
+          "2027-08-31"
+        ]
+      }
+    },
+    {
+      "id": "waste_circularity-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Betonhersteller müssen den Verwertungsweg für Betonabfälle bis zum 2027-08-31 dokumentieren.",
+      "expected": {
+        "category_ids": [
+          "WASTE_CIRCULARITY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": [
+          "2027-08-31"
+        ]
+      }
+    },
+    {
+      "id": "water_wastewater-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. Industrial sites discharging process wastewater must sample the discharge before release.",
+      "expected": {
+        "category_ids": [
+          "WATER_WASTEWATER"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "water_wastewater-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Industriebetriebe müssen ihr Prozessabwasser vor der Einleitung beproben.",
+      "expected": {
+        "category_ids": [
+          "WATER_WASTEWATER"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "soil_contamination-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. An operator must investigate suspected soil contamination before remediating the affected land.",
+      "expected": {
+        "category_ids": [
+          "SOIL_CONTAMINATION"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "soil_contamination-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Vor der Sanierung einer betroffenen Fläche muss der Betreiber den Verdacht auf Bodenverunreinigungen untersuchen.",
+      "expected": {
+        "category_ids": [
+          "SOIL_CONTAMINATION"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "nature_biodiversity-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. Construction works near a protected nesting habitat require a species-protection assessment.",
+      "expected": {
+        "category_ids": [
+          "NATURE_BIODIVERSITY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "nature_biodiversity-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Für Bauarbeiten in der Nähe geschützter Brutstätten ist eine artenschutzrechtliche Prüfung erforderlich.",
+      "expected": {
+        "category_ids": [
+          "NATURE_BIODIVERSITY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "noise_vibration-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. A construction site must measure vibration levels at neighbouring residential buildings.",
+      "expected": {
+        "category_ids": [
+          "NOISE_VIBRATION"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "noise_vibration-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Eine Baustelle muss die Erschütterungen an benachbarten Wohngebäuden messen.",
+      "expected": {
+        "category_ids": [
+          "NOISE_VIBRATION"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "energy_efficiency-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. Industrial operators must submit an electricity-efficiency audit report by 2027-10-31.",
+      "expected": {
+        "category_ids": [
+          "ENERGY_EFFICIENCY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": [
+          "2027-10-31"
+        ]
+      }
+    },
+    {
+      "id": "energy_efficiency-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Industriebetreiber müssen einen Bericht zur Stromeffizienzprüfung bis zum 2027-10-31 einreichen.",
+      "expected": {
+        "category_ids": [
+          "ENERGY_EFFICIENCY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": [
+          "2027-10-31"
+        ]
+      }
+    },
+    {
+      "id": "climate_carbon-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. The group must calculate its annual greenhouse-gas inventory in tonnes of CO2 equivalent.",
+      "expected": {
+        "category_ids": [
+          "CLIMATE_CARBON"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "climate_carbon-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Der Konzern muss seine jährliche Treibhausgasbilanz in Tonnen CO2-Äquivalent berechnen.",
+      "expected": {
+        "category_ids": [
+          "CLIMATE_CARBON"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "renewable_energy-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. The operator of a new wind turbine must document the conditions for grid connection.",
+      "expected": {
+        "category_ids": [
+          "RENEWABLE_ENERGY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "renewable_energy-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Der Betreiber einer neuen Windenergieanlage muss die Voraussetzungen für den Netzanschluss dokumentieren.",
+      "expected": {
+        "category_ids": [
+          "RENEWABLE_ENERGY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "building_permits-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. A proposed change of use requires building-authority approval before occupation.",
+      "expected": {
+        "category_ids": [
+          "BUILDING_PERMITS"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "building_permits-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Eine geplante Nutzungsänderung bedarf vor der Nutzung der Zustimmung der Bauaufsichtsbehörde.",
+      "expected": {
+        "category_ids": [
+          "BUILDING_PERMITS"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "structural_geotechnical-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. The designer must verify foundation bearing capacity against the specified design loads.",
+      "expected": {
+        "category_ids": [
+          "STRUCTURAL_GEOTECHNICAL"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "structural_geotechnical-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Die Tragwerksplanung muss die Tragfähigkeit der Gründung für die vorgegebenen Bemessungslasten nachweisen.",
+      "expected": {
+        "category_ids": [
+          "STRUCTURAL_GEOTECHNICAL"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "construction_product_conformity-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. A precast manufacturer must issue a declaration of performance for the construction product.",
+      "expected": {
+        "category_ids": [
+          "CONSTRUCTION_PRODUCT_CONFORMITY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "construction_product_conformity-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Ein Fertigteilhersteller muss eine Leistungserklärung für das Bauprodukt ausstellen.",
+      "expected": {
+        "category_ids": [
+          "CONSTRUCTION_PRODUCT_CONFORMITY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "public_procurement-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. A public contracting authority must disclose the award criteria in the tender documents.",
+      "expected": {
+        "category_ids": [
+          "PUBLIC_PROCUREMENT"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "public_procurement-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Ein öffentlicher Auftraggeber muss die Zuschlagskriterien in den Vergabeunterlagen offenlegen.",
+      "expected": {
+        "category_ids": [
+          "PUBLIC_PROCUREMENT"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "contracts_liability-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. The contractor must notify the client of a contractual defect claim within the agreed period.",
+      "expected": {
+        "category_ids": [
+          "CONTRACTS_LIABILITY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "contracts_liability-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Der Auftragnehmer muss dem Auftraggeber einen vertraglichen Mängelanspruch innerhalb der vereinbarten Frist anzeigen.",
+      "expected": {
+        "category_ids": [
+          "CONTRACTS_LIABILITY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "supply_chain_due_diligence-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. Purchasing teams must assess human-rights risks at material suppliers and document mitigation.",
+      "expected": {
+        "category_ids": [
+          "SUPPLY_CHAIN_DUE_DILIGENCE"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "supply_chain_due_diligence-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Der Einkauf muss Menschenrechtsrisiken bei Materiallieferanten bewerten und Abhilfemaßnahmen dokumentieren.",
+      "expected": {
+        "category_ids": [
+          "SUPPLY_CHAIN_DUE_DILIGENCE"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "road_fleet_transport-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. Commercial fleet operators must retain evidence of vehicle roadworthiness inspections.",
+      "expected": {
+        "category_ids": [
+          "ROAD_FLEET_TRANSPORT"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "road_fleet_transport-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Betreiber gewerblicher Fuhrparks müssen Nachweise über die Hauptuntersuchungen der Fahrzeuge aufbewahren.",
+      "expected": {
+        "category_ids": [
+          "ROAD_FLEET_TRANSPORT"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "dangerous_goods_transport-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. The sender of flammable liquids by road must prepare the dangerous-goods transport document.",
+      "expected": {
+        "category_ids": [
+          "DANGEROUS_GOODS_TRANSPORT"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "dangerous_goods_transport-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Der Absender entzündbarer Flüssigkeiten muss für den Straßentransport das Gefahrgutbeförderungspapier erstellen.",
+      "expected": {
+        "category_ids": [
+          "DANGEROUS_GOODS_TRANSPORT"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "employment_working_time-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. Employers must record employees working hours and daily rest periods.",
+      "expected": {
+        "category_ids": [
+          "EMPLOYMENT_WORKING_TIME"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "employment_working_time-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Arbeitgeber müssen die Arbeitszeiten und täglichen Ruhezeiten ihrer Beschäftigten dokumentieren.",
+      "expected": {
+        "category_ids": [
+          "EMPLOYMENT_WORKING_TIME"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "works_council_participation-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. Management must consult the works council before introducing the specified workplace arrangement.",
+      "expected": {
+        "category_ids": [
+          "WORKS_COUNCIL_PARTICIPATION"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "works_council_participation-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Die Geschäftsleitung muss den Betriebsrat vor Einführung der vorgesehenen betrieblichen Regelung beteiligen.",
+      "expected": {
+        "category_ids": [
+          "WORKS_COUNCIL_PARTICIPATION"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "data_protection-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. The company must document the purpose and retention period for employee personal data.",
+      "expected": {
+        "category_ids": [
+          "DATA_PROTECTION"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "data_protection-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Das Unternehmen muss Zweck und Speicherdauer der Verarbeitung personenbezogener Beschäftigtendaten dokumentieren.",
+      "expected": {
+        "category_ids": [
+          "DATA_PROTECTION"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "cybersecurity-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. IT operators must patch the exposed server vulnerability and document the security incident response.",
+      "expected": {
+        "category_ids": [
+          "CYBERSECURITY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "cybersecurity-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. IT-Betreiber müssen die offengelegte Server-Schwachstelle beheben und die Reaktion auf den Sicherheitsvorfall dokumentieren.",
+      "expected": {
+        "category_ids": [
+          "CYBERSECURITY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "corporate_governance_compliance-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. The company must maintain an internal channel for reporting suspected bribery.",
+      "expected": {
+        "category_ids": [
+          "CORPORATE_GOVERNANCE_COMPLIANCE"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "corporate_governance_compliance-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Das Unternehmen muss einen internen Meldekanal für Hinweise auf mutmaßliche Bestechung betreiben.",
+      "expected": {
+        "category_ids": [
+          "CORPORATE_GOVERNANCE_COMPLIANCE"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "financial_accounting_reporting-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. The accounting team must reconcile the fixed-asset ledger before preparing the financial statements.",
+      "expected": {
+        "category_ids": [
+          "FINANCIAL_ACCOUNTING_REPORTING"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "financial_accounting_reporting-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Das Rechnungswesen muss das Anlagenbuch vor Erstellung des Jahresabschlusses abstimmen.",
+      "expected": {
+        "category_ids": [
+          "FINANCIAL_ACCOUNTING_REPORTING"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "tax_customs-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. The importer must retain customs declarations for materials brought across the customs border.",
+      "expected": {
+        "category_ids": [
+          "TAX_CUSTOMS"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "tax_customs-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Der Importeur muss Zollanmeldungen für über die Zollgrenze eingeführte Materialien aufbewahren.",
+      "expected": {
+        "category_ids": [
+          "TAX_CUSTOMS"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "insurance-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. The policyholder must notify the insurer of a covered loss within the policy notification period.",
+      "expected": {
+        "category_ids": [
+          "INSURANCE"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "insurance-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Der Versicherungsnehmer muss dem Versicherer einen versicherten Schaden innerhalb der vertraglichen Meldefrist anzeigen.",
+      "expected": {
+        "category_ids": [
+          "INSURANCE"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "esg_sustainability_reporting-en",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "en",
+      "text": "Fictional test provision. The group must publish a sustainability statement covering environmental, social and governance indicators.",
+      "expected": {
+        "category_ids": [
+          "ESG_SUSTAINABILITY_REPORTING"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "esg_sustainability_reporting-de",
+      "synthetic": true,
+      "kind": "single_label",
+      "language": "de",
+      "text": "Fiktive Testvorschrift. Der Konzern muss eine Nachhaltigkeitserklärung zu Umwelt-, Sozial- und Governance-Kennzahlen veröffentlichen.",
+      "expected": {
+        "category_ids": [
+          "ESG_SUSTAINABILITY_REPORTING"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "privacy-cyber",
+      "synthetic": true,
+      "kind": "multi_label",
+      "language": "en",
+      "text": "Fictional test provision. A company must document its lawful purpose for processing employee personal data and patch exposed network vulnerabilities.",
+      "expected": {
+        "category_ids": [
+          "DATA_PROTECTION",
+          "CYBERSECURITY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "waste-water",
+      "synthetic": true,
+      "kind": "multi_label",
+      "language": "en",
+      "text": "Fictional test provision. A concrete plant must document waste concrete recycling routes and sample process wastewater before discharge.",
+      "expected": {
+        "category_ids": [
+          "WASTE_CIRCULARITY",
+          "WATER_WASTEWATER"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "worktime-council",
+      "synthetic": true,
+      "kind": "multi_label",
+      "language": "en",
+      "text": "Fictional test provision. An employer must document working hours and consult the works council before changing the workplace arrangement.",
+      "expected": {
+        "category_ids": [
+          "EMPLOYMENT_WORKING_TIME",
+          "WORKS_COUNCIL_PARTICIPATION"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "product-structure",
+      "synthetic": true,
+      "kind": "multi_label",
+      "language": "en",
+      "text": "Fictional test provision. A precast manufacturer must issue a declaration of performance, while the project designer must verify foundation bearing capacity.",
+      "expected": {
+        "category_ids": [
+          "CONSTRUCTION_PRODUCT_CONFORMITY",
+          "STRUCTURAL_GEOTECHNICAL"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "supplier-tender",
+      "synthetic": true,
+      "kind": "multi_label",
+      "language": "en",
+      "text": "Fictional test provision. Public tender documents must disclose award criteria, and purchasing teams must assess human-rights risks at material suppliers.",
+      "expected": {
+        "category_ids": [
+          "PUBLIC_PROCUREMENT",
+          "SUPPLY_CHAIN_DUE_DILIGENCE"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "climate-energy",
+      "synthetic": true,
+      "kind": "multi_label",
+      "language": "en",
+      "text": "Fictional test provision. The company must calculate its greenhouse-gas inventory and perform an electricity-efficiency audit.",
+      "expected": {
+        "category_ids": [
+          "CLIMATE_CARBON",
+          "ENERGY_EFFICIENCY"
+        ],
+        "status": "CLASSIFIED",
+        "dates": []
+      }
+    },
+    {
+      "id": "outside-fishing",
+      "synthetic": true,
+      "kind": "abstain",
+      "language": "en",
+      "text": "Fictional test provision. This provision exclusively concerns annual catch quotas for deep-sea fishing vessels.",
+      "expected": {
+        "category_ids": [],
+        "status": "OUT_OF_SCOPE",
+        "dates": []
+      }
+    },
+    {
+      "id": "outside-hospital",
+      "synthetic": true,
+      "kind": "abstain",
+      "language": "en",
+      "text": "Fictional test provision. This provision exclusively concerns clinical medication dosage for inpatient hospital patients.",
+      "expected": {
+        "category_ids": [],
+        "status": "OUT_OF_SCOPE",
+        "dates": []
+      }
+    },
+    {
+      "id": "unknown-annex",
+      "synthetic": true,
+      "kind": "abstain",
+      "language": "en",
+      "text": "Fictional test provision. Operators must comply with the requirements of Annex Z. Neither Annex Z nor any description of its subject is supplied.",
+      "expected": {
+        "category_ids": [],
+        "status": "REVIEW",
+        "dates": []
+      }
+    },
+    {
+      "id": "ambiguous-subject",
+      "synthetic": true,
+      "kind": "abstain",
+      "language": "en",
+      "text": "Fictional test provision. The organisation must implement the new procedure. The subject and contents of the procedure are not supplied.",
+      "expected": {
+        "category_ids": [],
+        "status": "REVIEW",
+        "dates": []
+      }
+    }
+  ]
+}
