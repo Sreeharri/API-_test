@@ -1,0 +1,13 @@
+Local software verification — company endpoint update
+
+32 unittest checks passed on 2026-10-20 using a temporary local HTTP/SSE fake server.
+All eight suites were exercised, including report generation.
+Checks cover automatic /v1 detection, prefix-preserving gateway routing,
+exact model-ID discovery, multi-model ambiguity, HTML sign-in responses,
+optional/required authentication, thinking-only detection, scoring and reports.
+Both company model profiles passed offline configuration dry-run validation.
+No requests were sent to the actual company Llama or Qwen deployment.
+There are no measured Llama/Qwen performance or quality results in this package.
+
+Reproduce:
+python -m unittest discover -s tests -v

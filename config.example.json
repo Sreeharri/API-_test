@@ -1,0 +1,54 @@
+{
+  "discovery_timeout_seconds": 10,
+  "timeout_seconds": 180,
+  "request_deadline_seconds": 300,
+  "max_output_tokens": 2048,
+  "models": [
+    {
+      "name": "llama8b",
+      "base_url": "https://vllm.max-boegl.biz/llama-8b-nvfp4",
+      "base_url_env": "LLAMA_BASE_URL",
+      "model": "auto",
+      "model_env": "LLAMA_MODEL",
+      "detect_api_base": true,
+      "api_key_env": "LLAMA_API_KEY",
+      "api_key_required": false,
+      "stream_usage": true,
+      "request_options": {
+        "temperature": 0.2,
+        "top_p": 1.0
+      },
+      "deployment": {
+        "route_label": "llama-8b-nvfp4",
+        "exact_checkpoint": "auto-discovered ID; confirm revision with IT",
+        "quantization": "nvfp4 in route label; verify deployment",
+        "server_engine": "vLLM indicated by supplied hostname; confirm version with IT",
+        "configured_context_tokens": null,
+        "thinking_mode": "not specified"
+      }
+    },
+    {
+      "name": "qwen3_30b",
+      "base_url": "https://vllm.max-boegl.biz/qwen3-30b-a3b",
+      "base_url_env": "QWEN_BASE_URL",
+      "model": "auto",
+      "model_env": "QWEN_MODEL",
+      "detect_api_base": true,
+      "api_key_env": "QWEN_API_KEY",
+      "api_key_required": false,
+      "stream_usage": true,
+      "request_options": {
+        "temperature": 0.2,
+        "top_p": 1.0
+      },
+      "deployment": {
+        "route_label": "qwen3-30b-a3b",
+        "exact_checkpoint": "auto-discovered ID; confirm revision with IT",
+        "quantization": "ask IT",
+        "server_engine": "vLLM indicated by supplied hostname; confirm version with IT",
+        "configured_context_tokens": null,
+        "thinking_mode": "IT reports reasoning-only responses currently"
+      }
+    }
+  ]
+}

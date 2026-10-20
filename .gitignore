@@ -1,0 +1,7 @@
+.env
+.env.*
+!.env.example
+config.json
+reports/
+__pycache__/
+*.pyc

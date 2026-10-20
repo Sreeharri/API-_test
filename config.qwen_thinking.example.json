@@ -1,0 +1,60 @@
+{
+  "discovery_timeout_seconds": 10,
+  "timeout_seconds": 300,
+  "request_deadline_seconds": 600,
+  "max_output_tokens": 4096,
+  "models": [
+    {
+      "name": "qwen_thinking_on",
+      "base_url": "https://vllm.max-boegl.biz/qwen3-30b-a3b",
+      "base_url_env": "QWEN_BASE_URL",
+      "model": "auto",
+      "model_env": "QWEN_MODEL",
+      "detect_api_base": true,
+      "api_key_env": "QWEN_API_KEY",
+      "api_key_required": false,
+      "stream_usage": true,
+      "request_options": {
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        }
+      },
+      "deployment": {
+        "route_label": "qwen3-30b-a3b",
+        "exact_checkpoint": "auto-discovered ID; confirm revision with IT",
+        "quantization": "ask IT",
+        "server_engine": "vLLM indicated by supplied hostname; confirm version with IT",
+        "configured_context_tokens": null,
+        "thinking_mode": "requested on"
+      }
+    },
+    {
+      "name": "qwen_thinking_off",
+      "base_url": "https://vllm.max-boegl.biz/qwen3-30b-a3b",
+      "base_url_env": "QWEN_BASE_URL",
+      "model": "auto",
+      "model_env": "QWEN_MODEL",
+      "detect_api_base": true,
+      "api_key_env": "QWEN_API_KEY",
+      "api_key_required": false,
+      "stream_usage": true,
+      "request_options": {
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "deployment": {
+        "route_label": "qwen3-30b-a3b",
+        "exact_checkpoint": "auto-discovered ID; confirm revision with IT",
+        "quantization": "ask IT",
+        "server_engine": "vLLM indicated by supplied hostname; confirm version with IT",
+        "configured_context_tokens": null,
+        "thinking_mode": "requested off"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "review-summary-de",
+    "category": "summary",
+    "language": "de",
+    "prompt": "Dies ist ein fiktiver Test. [DOC-REV § 2] Arbeitgeber müssen Kranprüfungen vor dem 2027-06-30 dokumentieren. Die Vorschrift gilt ab 2027-04-01. Sie enthält keine Bußgeldhöhe. Schreibe eine deutsche Zusammenfassung mit höchstens 90 Wörtern für HSE. Unterscheide Geltungsbeginn und Frist, zitiere DOC-REV § 2, erfinde keine Sanktionen und erwähne die erforderliche menschliche Prüfung."
+  },
+  {
+    "id": "review-task-proposal",
+    "category": "task_proposal",
+    "language": "en",
+    "prompt": "Synthetic fixture: [DOC-PLAN Art. 5] Operators must update their emissions procedure and document employee training by 2027-10-31. Routing policy: emissions -> ENVIRONMENT; training -> HSE; owner roles are ENV_MANAGER and HSE_MANAGER respectively. Draft two reviewable tasks as JSON with title, description, department, owner_role, due_date, evidence_quote, citation and review_required. Use only this evidence, not invented named employees."
+  },
+  {
+    "id": "review-impact",
+    "category": "impact",
+    "language": "en",
+    "prompt": "Synthetic change: [OLD § 4] inspect every 12 months; [NEW § 4] inspect every 6 months from 2027-07-01. Explain likely operational impact for a construction fleet in under 150 words with citations. Identify which claims follow directly from the excerpt and which would require company-specific facts. Do not invent costs, penalties or number of affected machines."
+  },
+  {
+    "id": "review-uncertain-proof",
+    "category": "evidence_review",
+    "language": "en",
+    "prompt": "Synthetic task requires a signed crane inspection certificate identifying machine CR-7 before 2027-09-01. Submitted text: \"Inspection performed. Date illegible. Machine number missing. Signature not visible.\" Explain what can be established, what evidence is missing, and recommend a human review status. Do not mark the task complete."
+  }
+]
