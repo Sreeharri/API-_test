@@ -19,11 +19,12 @@ The API adapter uses OpenAI-compatible Chat Completions. API-path detection is r
 
 ## Start on your office laptop
 
-Extract the ZIP and open PowerShell inside the extracted `legal_radar_model_tests` folder. `config.json` is already supplied with the company URLs and `model: auto`.
+Extract the ZIP and open PowerShell inside the extracted `legal_radar_model_tests` folder. `config.example.json` supplies the company URLs and `model: auto`. Create local configuration once; preserve existing local configuration when upgrading.
 
 ```powershell
 py -3 --version
-Copy-Item .env.example .env
+if (!(Test-Path config.json)) { Copy-Item config.example.json config.json }
+if (!(Test-Path .env)) { Copy-Item .env.example .env }
 py -3 benchmark.py --discover
 ```
 
@@ -65,7 +66,66 @@ Validate configuration without any HTTP calls:
 py -3 benchmark.py --dry-run
 ```
 
-Environment overrides take precedence over `.env`, and `.env` overrides the template's model/base defaults through named override variables. Stale system environment values can therefore override recent `.env` edits. Leave `LLAMA_MODEL` and `QWEN_MODEL` blank for auto-discovery, unless IT supplies exact model IDs. You can restore the company config from `config.example.json` if needed; the supplied `config.json` contains no secrets.
+Environment overrides take precedence over `.env`, and `.env` overrides the template's model/base defaults through named override variables. Stale system environment values can therefore override recent `.env` edits. Leave `LLAMA_MODEL` and `QWEN_MODEL` blank for auto-discovery, unless IT supplies exact model IDs. You can restore the company config from `config.example.json` if needed; the example configuration contains no secrets. Local `config.json` and `.env` are excluded from this update package.
+
+## Version 2 evaluation fixes and project dummy tests
+
+This update preserves strict exact-match results and adds a separate allowed-alias match. It does not silently turn wrong dates, departments, invented citations or missing final answers into passes.
+
+- Known fixture-owned alternatives such as `Plant A` / `A` and bracketed source labels are handled by explicit `field_aliases` entries in the data file. Unknown IDs are never fuzzy-matched.
+- Prompts now state the expected identifier representation. A task evidence ID such as `DOC-TASK § 3` must remain exact; `DOC-TASK-3` is not accepted as an invented replacement.
+- Stability reports show both raw and normalized answer variants, separating consistent selections from format variation.
+- The HTML/JSON/CSV retain strict and allowed-alias scores. JSON validity, types, required fields, duplicates and missing final answers still matter.
+- All-request latency is now available alongside usable-response latency, so a long reasoning-only failure remains visible.
+- Automatic textual `<tool_call>` output remains a failed structured-tool probe. The client does not reinterpret or execute it to hide a server/parser problem.
+- `--max-output-tokens 4096` creates an explicitly recorded output-budget experiment. It does not automatically retry failures or guarantee a final answer.
+
+The alias rules were developed after examining the previous outputs. Retrospective normalized scores are diagnostics on a development set, not new independent model-quality evidence. Re-run versioned tests and use a held-out real-data set before making production accuracy claims.
+
+### Workflow dummy test
+
+```powershell
+py -3 benchmark.py --models qwen3_30b --suite dummy --repeats 3 --max-output-tokens 4096
+```
+
+Twelve fictional construction-company scenarios test a complete structured response: relevance, applicability, enacted/draft status, department assignment, summary, source citations and task proposals. Cases include crane inspections, waste, energy, IT access, several departments, irrelevant fishing law, drafts, voluntary duties, missing dates, missing owners, uncertain applicability and a malicious footer.
+
+Routing and owner roles are supplied as a test policy; they are not claimed to be Max Bögl's actual ownership table. Action codes are controlled values, while task titles, descriptions and summaries are freely generated. Automated checks validate structured facts, task core fields, exact source-contained evidence quotes, review flags, summary length and new ISO-date detection. These checks cannot establish complete prose faithfulness: a summary containing unsupported prose can still pass its mechanical checks. `human_review.csv` therefore includes every dummy output for review. Do not describe a structured-check pass as approved compliance advice.
+
+### RAG dummy test
+
+```powershell
+py -3 benchmark.py --models qwen3_30b --suite rag --repeats 3 --max-output-tokens 4096
+```
+
+Eight fictional questions each run in two modes:
+
+| Mode | Evidence supplied | What it diagnoses |
+|---|---|---|
+| Oracle | Correct gold passages only | Whether the model answers correctly when given the right evidence |
+| Retrieved | Top 3 passages from the bundled tiny lexical index | Whether that toy retrieval plus generation produces the right answer |
+
+Questions cover current/historical versions, deadlines, German evidence with an English question, absent fines, draft status, departments and source injection. The retriever respects `valid_from` / exclusive `valid_to` metadata at the query date and uses a documented fixed EN/DE term bridge. It does not read expected source IDs to select retrieval results. Gold IDs are used only after retrieval to measure recall; the oracle mode intentionally supplies them.
+
+The report separates retrieval recall from answer-and-evidence correctness and keeps oracle/retrieved scores separate. An answer needs the expected fact, exact passage IDs and source-contained supporting text. This is fixture-specific validation, not a universal semantic entailment checker. RAG output remains subject to human review.
+
+The toy index has eight documents; it is not the production pgvector/embedding/reranker pipeline and does not establish corpus-scale retrieval performance. No real PostgreSQL connection, email, task creation or existing backend modification takes place.
+
+### Run the revised project tests
+
+```powershell
+py -3 benchmark.py --models qwen3_30b --suite quality,stability,dummy,rag --repeats 3 --samples 20 --max-output-tokens 4096
+```
+
+This changes the output cap from the earlier 2048-token run. To isolate the cap's effect, run the same version-2 command once with `--max-output-tokens 2048` and once with `4096`. Keep other settings fixed. The example thinking on/off profiles remain a separate server-dependent experiment; test their smoke calls first.
+
+### Inspect an earlier ZIP without calling the model again
+
+```powershell
+py -3 rescore.py "C:\path-to-your-saved-report.zip"
+```
+
+Replace that example path with your actual report ZIP. The tool writes a new retrospective report under `reports`, retains original request outputs and `original_score`, and leaves the uploaded ZIP unchanged. It does not send any API request. The report identifies the retrospective alias policy and retains the original model settings. No new measured performance or held-out accuracy is implied.
 
 ## Recommended test order
 
@@ -92,7 +152,7 @@ A more substantial run, after the smoke test succeeds:
 py -3 benchmark.py --suite all --repeats 3 --samples 30 --context-chars 4000,16000,32000,64000 --workers 1,2,4 --requests-per-worker 5
 ```
 
-Run duration depends on your actual API. Thinking-mode generation, long prompts and queueing can increase runtime substantially; the suite does not promise a completion time. Defaults include one excluded warm-up per selected model. Initial all-suite testing makes about 100 measured requests per model; tool probes can add two conditional round trips.
+Run duration depends on your actual API. Thinking-mode generation, long prompts and queueing can increase runtime substantially; the suite does not promise a completion time. Defaults include one excluded warm-up per selected model. The original eight suites make about 100 measured requests per model. Version 2 adds 12 dummy workflow requests and 16 RAG requests per repeat; tool probes can add conditional round trips.
 
 Test one model or selected suites:
 

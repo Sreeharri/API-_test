@@ -1,13 +1,21 @@
-Local software verification — company endpoint update
+Local software verification — version 2
 
-32 unittest checks passed on 2026-10-20 using a temporary local HTTP/SSE fake server.
-All eight suites were exercised, including report generation.
-Checks cover automatic /v1 detection, prefix-preserving gateway routing,
-exact model-ID discovery, multi-model ambiguity, HTML sign-in responses,
-optional/required authentication, thinking-only detection, scoring and reports.
-Both company model profiles passed offline configuration dry-run validation.
-No requests were sent to the actual company Llama or Qwen deployment.
-There are no measured Llama/Qwen performance or quality results in this package.
+50 unittest checks pass using a temporary local HTTP/SSE fake server.
+The integration check exercises all ten suites, including 12 dummy workflow
+scenarios, 16 oracle/retrieved RAG calls, metadata, CSV and HTML report generation.
+An explicit 4096-token output budget override is checked in the run metadata.
+Grader checks cover safe aliases, unchanged strict results, unknown/altered IDs,
+missing deadlines, draft/irrelevant task suppression, evidence quotes,
+RAG historical versions, missing-fact abstention and retrieval recall.
 
-Reproduce:
-python -m unittest discover -s tests -v
+The summary sanity check deliberately does NOT claim to prove prose faithfulness.
+Human review remains required for generated summaries, descriptions and answers.
+
+The earlier Qwen report was re-evaluated locally to verify the new score fields:
+strict quality remains 41/50; the allowed-alias diagnostic is 48/50.
+These retrospective aliases were developed after seeing those outputs.
+That diagnostic is not a new held-out model evaluation.
+
+No company endpoint was contacted while preparing this version.
+There are no new live Qwen or Llama results in the package.
+Reproduce: python -m unittest discover -s tests -v

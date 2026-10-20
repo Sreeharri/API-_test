@@ -322,13 +322,17 @@ class BenchmarkTests(unittest.TestCase):
             root=Path(temp); config=root/'config.json'; output=root/'reports'
             config.write_text(json.dumps(self.cfg))
             command=[sys.executable,str(b.ROOT/'benchmark.py'),'--config',str(config),'--env-file',str(root/'absent.env'),
-                     '--suite','smoke,quality,context,concurrency,capabilities,latency,stability,review','--context-chars','1000',
-                     '--workers','1,2','--requests-per-worker','1','--samples','2','--output',str(output)]
+                     '--suite','smoke,quality,context,concurrency,capabilities,latency,stability,review,dummy,rag','--context-chars','1000',
+                     '--workers','1,2','--requests-per-worker','1','--samples','2','--max-output-tokens','4096','--output',str(output)]
             result=subprocess.run(command,capture_output=True,text=True,timeout=40)
             self.assertEqual(result.returncode,0,result.stdout+result.stderr)
             run=next(output.iterdir())
             data=json.loads((run/'summary.json').read_text())
             self.assertEqual(data['metadata']['status'],'completed')
+            self.assertEqual(data['metadata']['models'][0]['max_output_tokens'],4096)
+            self.assertEqual(data['models']['fake']['dummy']['requests'],12)
+            self.assertEqual(data['models']['fake']['rag']['requests'],16)
+            self.assertIn('retrieved',data['models']['fake']['rag']['by_mode'])
             self.assertTrue((run/'comparison.html').exists()); self.assertTrue((run/'results.csv').exists())
             self.assertTrue((run/'human_review.csv').exists()); self.assertTrue((run/'fake'/'results.jsonl').exists())
             self.assertTrue(data['models']['fake']['context']['by_input_characters']['1000']['all_positions_passed'])

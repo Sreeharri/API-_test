@@ -1,41 +1,38 @@
-# Run the company API tests
+# Start the revised Legal Radar tests
 
-The endpoints from your screenshot are already in `config.json`.
-No API key was shown. Leave the optional key entries blank unless IT requires them.
+The company routes are in `config.example.json`.
+When upgrading, replace the code, tests and data folders; keep office `.env` and `config.json`.
+Neither local settings file is included in this update ZIP.
 
-1. Extract the ZIP.
-2. Open PowerShell inside `legal_radar_model_tests`.
-3. Run:
-
-```powershell
-Copy-Item .env.example .env
-py -3 benchmark.py --discover
-py -3 benchmark.py --suite smoke
-```
-
-The checker finds the API base and actual model ID instead of guessing from the route name.
-If authentication is required, run `notepad .env` and enter your keys locally.
-If `/models` is disabled or lists multiple models, enter the exact IDs supplied by IT.
-
-IT reports that Qwen currently returns thinking output without a final answer.
-The smoke test flags this as `reasoning_only`. It does not count it as a correct answer.
-
-Start all tests on Llama:
+Open PowerShell in your test repository and run:
 
 ```powershell
-py -3 benchmark.py --models llama8b --suite all
+if (!(Test-Path config.json)) { Copy-Item config.example.json config.json }
+if (!(Test-Path .env)) { Copy-Item .env.example .env }
+py -3 benchmark.py --models qwen3_30b --suite smoke
 ```
 
-After Qwen passes smoke, compare both:
+Then run the revised quality/stability and new workflow/RAG tests:
 
 ```powershell
-py -3 benchmark.py --suite all
+py -3 benchmark.py --models qwen3_30b --suite quality,stability,dummy,rag --repeats 3 --samples 20 --max-output-tokens 4096
 ```
 
-Open `comparison.html` inside the new timestamped `reports` folder.
-Keep the JSON and CSV files for detailed review.
-If a check fails, share the terminal diagnostics or report with key values removed.
+Open the new `reports/<timestamp>/comparison.html`.
+Review strict and allowed-alias scores separately.
+Review the dummy workflow/RAG component checks and `human_review.csv`.
+A pass on mechanical summary checks does not mean the summary is faithful.
 
-These company endpoints have not been tested from this environment.
-All supplied software checks use a temporary local fake server.
-See `README.md` for test interpretation, context limits, settings and troubleshooting.
+The 4096-token setting is a new recorded experiment, not a confirmed fix.
+For a controlled output-cap comparison, repeat the same command with 2048 and 4096.
+
+To test only the new dummy workflow and RAG paths:
+
+```powershell
+py -3 benchmark.py --models qwen3_30b --suite dummy,rag --repeats 3 --max-output-tokens 4096
+```
+
+All new rules and archive passages are fictional. No real tasks or notifications are created.
+The RAG index is a tiny local lexical baseline, separate from production Legal Radar retrieval.
+Keys remain local. No company endpoint was contacted while building this update.
+See `README.md` for complete configuration, limitations, scoring and interpretation.
